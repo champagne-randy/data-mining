@@ -42,6 +42,17 @@ This repo holds materials from Coursera's [Data Mining](https://www.coursera.org
 
 
 
+### run build recipe
+
+* install project dependencies <br>
+```npm install```
+* to run build tasks and watch for changes <br>
+```npm run build```
+
+
+
+
+
 ### run tests
 
 * install project dependencies <br>

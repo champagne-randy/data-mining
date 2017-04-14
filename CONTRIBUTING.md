@@ -11,6 +11,17 @@
 
 
 
+### run build recipe
+
+* install project dependencies <br>
+```npm install```
+* to run build tasks and watch for changes <br>
+```npm run build```
+
+
+
+
+
 ### run tests
 
 * install project dependencies <br>
@@ -24,7 +35,15 @@
 
 
 
-### add modules
+### develop new modules
 
 * init project dir inside modules dir
 * make sure to use .es6 extension and syntax
+
+
+
+
+
+
+
+
