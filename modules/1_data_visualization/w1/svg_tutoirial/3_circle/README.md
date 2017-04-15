@@ -1,6 +1,6 @@
 # Tutorial from W3Schools
 
-* [circle primitive](https://www.w3schools.com/graphics/svg_rect.asp)
+* [circle primitive](https://www.w3schools.com/graphics/svg_circle.asp)
 
 
 
