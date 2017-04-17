@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>text - SVG tutorial</title>
+	</head>
+	<body>
+
+		<h1>Example 1: text</h1>
+		<p>
+			The &lt;text&gt; element is used to define a text.
+		</p>
+		<svg height = "30" 
+			  width = "200"
+		>
+			<text  x = "0" 
+				   y = "15" 
+				fill = "red"
+			>
+				I love SVG!
+			</text>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 2: text</h1>
+		<p>
+			Rotate the text:
+		</p>
+		<svg height	= "60" 
+			  width = "200"
+		>
+			<text 		x = "0" 
+						y = "15" 
+					 fill = "red" 
+				transform = "
+						rotate(30 20,40)
+				"
+			>
+				I love SVG
+			</text>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 3: text</h1>
+		<p>
+			The &lt;text&gt; element can be arranged in any number of sub-groups with the &lt;tspan&gt; element. Each &lt;tspan&gt; element can contain different formatting and position.
+			<br><br>
+			Text on several lines (with the &lt;tspan&gt; element):
+		</p>
+		<svg height = "90" 
+			  width = "200"
+			  style = "
+			 	border : 2px solid grey;
+			  "
+		>
+			<text 	x = "10" 
+					y = "20" 
+				style = "
+					  fill : red;
+					border : 1px dashed blue;
+				"
+			>
+				Several lines:
+				<tspan 	x = "10" 
+						y = "45"
+				>
+					First line.
+				</tspan>
+				<tspan 	x = "10" 
+						y = "70"
+				>
+					Second line.
+				</tspan>
+			</text>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 4: text</h1>
+		<p>
+			Text as a link (with the &lt;a&gt; element):
+		</p>
+		<svg 	 height = "30" 
+			  	  width = "200" 
+			xmlns:xlink = "http://www.w3.org/1999/xlink"
+		>
+			<a xlink:href = "https://www.w3schools.com/graphics/" 
+				   target = "_blank"
+			>
+			<text x  = "0" 
+				  y  = "15" 
+				fill = "red"
+			>
+				I love SVG!
+			</text>
+			</a>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+	 
+	</body>
+</html>
+
+
+
+
+
+
+
+
