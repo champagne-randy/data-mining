@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>exploring Path element  - SVG tutorial</title>
+		<link rel="stylesheet" type="text/css" href="../_style/master.css">
+	</head>
+	<body>
+
+		<h1>
+			<a 
+				href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths"
+			>
+				Exploring &lt;path&gt; element
+			</a>
+		</h1>
+		<p>
+			The &lt;path&gt; element is the most powerful element in the SVG library of basic shapes. You can use it to create lines, curves, arcs and more.
+			<br><br>
+			Paths create complex shapes by combining multiple straight lines or curved lines. Complex shapes composed only of straight lines can be created as polylines. While polylines and paths can create similar-looking shapes, polylines require a lot of small straight lines to simulate curves and don't scale well to larger sizes. A good understanding of paths is important when drawing SVGs. While creating complex paths using an XML editor or text editor is not recommended, understanding how they work will allow you to identify and repair display issues in SVGs.
+			<br><br>
+			The shape of a path element is defined by one attribute: d (see more in basic shapes). The "d" attribute contains a series of commands and parameters used by those commands.
+			<br><br>
+			Each of the commands is instantiated (for example, creating a class, naming and locating it) by a specific letter. For instance, let's move to the x and y coordinates (10, 10). The "Move to" command is called with the letter M. When the parser runs into this letter, it knows you want to move to a point. So, to move to (10,10) you would use the command "M 10 10". After that, the parser begins reading for the next command.
+			<br><br>
+			All of the commands also come in two variants. An uppercase letter specifies absolute coordinates on the page, and a lowercase letter specifies relative coordinates (e.g. move from the last point 10px up and 7px to the left).
+			<br><br>
+			Coordinates in the "d" attribute are always unitless and hence in the user coordinate system. Later, we will learn how paths can be transformed to suit other needs.
+		</p>
+
+		<br>
+
+		<h2>Bezier Curves: cubic</h2>
+		<p>
+			The cubic curve, C, is the slightly more complex curve. Cubic Beziers take in two control points for each point. Therefore, to create a cubic Bezier, you need to specify three sets of coordinates.
+			<br><br>
+			The example below creates nine Cubic Bezier curves. As the curves move toward the left, the control points become spread out horizontally. As it moves towards the right, they become further separated from the end points. The thing to note here is that the curve starts in the direction of the first control point, and then bends so that it arrives along the direction of the second control point.
+		</p>
+		<div
+			class = "graphic_container"
+		>
+			<div
+				class = "graphic_svg"
+			>
+				<svg 
+					height = "200" 
+					 width = "200"
+				>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 10 10 
+							 	C 20 20, 40 20, 50 10
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 70 10 
+							 	C 70 40, 120 20, 120 10
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 130 10 
+							 	C 120 20, 180 20, 170 10
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 10 60 
+							 	C 20 80, 40 80, 50 60
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 70 60 
+							 	C 70 80, 110 80, 110 60
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 130 60 
+							 	C 120 80, 180 80, 170 60
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 10 110 
+							 	C 20 140, 40 140, 50 110
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 70 110 
+							 	C 70 140, 110 140, 110 110
+							 " 
+					/>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 130 110 
+							 	C 120 140, 180 140, 170 110
+							 " 
+					/>
+					Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div
+				class = "graphic_png"
+			>
+				<img 
+					src = "https://mdn.mozillademos.org/files/10401/Cubic_Bezier_Curves_with_grid.png"
+				>
+			</div>
+		</div>
+
+		<p>
+			You can string together several Bezier curves to create extended, smooth shapes. Often, the control point on one side of a point will be a reflection of the control point used on the other side to keep the slope constant. In this case, you can use a shortcut version of the cubic Bezier, designated by the command S (or s).
+			<br><br>
+			S produces the same type of curve as earlier, but if it follows another S command or a C command, the first control point is assumed to be a reflection of the one used previously. If the S command doesn't follow another S or C command, then it is assumed that both control points for the curve are the same. An example of this syntax is shown below, and in the figure to the left the specified control points are shown in red, and the inferred control point in blue.
+		</p>
+		<div
+			class = "graphic_container"
+		>
+			<div
+				class = "graphic_svg"
+			>
+				<svg 
+					height = "200" 
+					 width = "200"
+				>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 10 80 
+							 	C 40 10, 65 10, 95 80 
+							 	S 150 150, 180 80
+							 " 
+					/>
+					Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div
+				class = "graphic_png"
+			>
+				<img 
+					src = "https://mdn.mozillademos.org/files/10405/ShortCut_Cubic_Bezier_with_grid.png"
+				>
+			</div>
+		</div>
+
+
+		<h2>Bezier cuve: quadratic</h2>
+		<p>
+			The other type of Bezier curve, the quadratic curve called with Q, is actually a simpler curve than the cubic one. It requires one control point which determines the slope of the curve at both the start point and the end point. It takes two arguments: the control point and the end point of the curve.
+		</p>
+		<div 
+			class = "graphic_container"
+		>
+			<div
+				class = "graphic_svg"
+			>
+				<svg 
+					height = "200" 
+					 width = "200"
+				>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 10 80 
+							 	Q 95 10 180 80
+							 " 
+					/>
+					Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div 
+				class = "graphic_png"
+			>
+				<img 
+					src = "https://mdn.mozillademos.org/files/10403/Quadratic_Bezier_with_grid.png"
+				>
+			</div>
+		</div>
+		<p>
+			As with the cubic Bezier curve, there is a shortcut for stringing together multiple quadratic Beziers, called with T.
+			<br><br>
+			This shortcut looks at the previous control point you used and infers a new one from it. This means that after your first control point, you can make fairly complex shapes by specifying only end points.
+		</p>
+		<div 
+			class = "graphic_container"
+		>
+			<div
+				class = "graphic_svg"
+			>
+				<svg 
+					height = "200" 
+					 width = "200"
+				>
+					<path 
+						stroke = "black" 
+						  fill = "transparent"
+							 d = "
+							 	M 10 80 
+							 	Q 52.5 10, 95 80 
+							 	T 180 80
+							 " 
+					/>
+					Sorry, your browser does not support inline SVG.
+				</svg>
+			</div>
+			<div 
+				class = "graphic_png"
+			>
+				<img 
+					src = "https://mdn.mozillademos.org/files/10407/Shortcut_Quadratic_Bezier_with_grid.png"
+				>
+			</div>
+		</div>
+		<p>
+			Both curves produce similar results, although the cubic allows you greater freedom in exactly what your curve looks like. Deciding which curve to use is situational and depends on the amount of symmetry your line has.
+		</p>
+	 
+	</body>
+</html>
+
+
+
