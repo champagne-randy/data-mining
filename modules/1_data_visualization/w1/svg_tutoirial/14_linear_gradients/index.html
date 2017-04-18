@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>linear gradients - SVG tutorial</title>
+	</head>
+	<body>
+
+		<h1>Example 1: linear gradients - &lt;linearGradient&gt;</h1>
+		<p>
+			The &lt;linearGradient&gt; element is used to define a linear gradient.
+			<br><br>
+			The &lt;linearGradient&gt; element must be nested within a &lt;defs&gt; tag. The &lt;defs&gt; tag is short for definitions and contains definition of special elements (such as gradients).
+			<br><br>
+			Linear gradients can be defined as horizontal, vertical or angular gradients:
+			<ul>
+				<li>
+					Horizontal gradients are created when y1 and y2 are equal and x1 and x2 differ
+				</li>
+				<li>
+					Vertical gradients are created when x1 and x2 are equal and y1 and y2 differ
+				</li>
+				<li>
+					Angular gradients are created when x1 and x2 differ and y1 and y2 differ
+				</li>
+			</ul>
+			This example defines an ellipse with a horizontal linear gradient from yellow to red:
+		</p>
+		<svg 
+			height = "150" 
+			 width = "400"
+		>
+			<defs>
+				<linearGradient 
+					id = "grad1" 
+					x1 = "0%" 
+					y1 = "0%" 
+					x2 = "100%" 
+					y2 = "0%"
+				>
+					<stop 
+						offset = "0%" 
+						 style = "
+						 	  stop-color: rgb(255,255,0);
+						 	stop-opacity: 1;
+						 " 
+					/>
+					<stop 
+						offset = "100%" 
+						 style = "
+						 	  stop-color: rgb(255,0,0);
+						 	stop-opacity: 1;
+						 " 
+					/>
+				</linearGradient>
+			</defs>
+			<ellipse 
+				  cx = "200" 
+				  cy = "70" 
+				  rx = "85" 
+				  ry = "55" 
+				fill = "url(#grad1)" 
+			/>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 2: linear gradients - &lt;linearGradient&gt;</h1>
+		<p>
+			Define an ellipse with a vertical linear gradient from yellow to red:
+		</p>
+		<svg 
+			height = "150" 
+			 width = "400"
+		>
+			<defs>
+				<linearGradient 
+					id = "grad2" 
+					x1 = "0%" 
+					y1 = "0%" 
+					x2 = "0" 
+					y2 = "100%"
+				>
+					<stop 
+						offset = "0%" 
+						 style = "
+						 	  stop-color: rgb(255,255,0);
+						 	stop-opacity: 1;
+						 " 
+					/>
+					<stop 
+						offset = "100%" 
+						 style = "
+						 	  stop-color: rgb(255,0,0);
+						 	stop-opacity: 1;
+						 " 
+					/>
+				</linearGradient>
+			</defs>
+			<ellipse 
+				  cx = "200" 
+				  cy = "70" 
+				  rx = "85" 
+				  ry = "55" 
+				fill = "url(#grad2)" 
+			/>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 3: linear gradients - &lt;linearGradient&gt;</h1>
+		<p>
+			Define an ellipse with a horizontal linear gradient from yellow to red, and add a text inside the ellipse:
+		</p>
+		<svg 
+			height = "150" 
+			 width = "400"
+		>
+			<defs>
+				<linearGradient 
+					id = "grad3" 
+					x1 = "0%" 
+					y1 = "0%" 
+					x2 = "100%" 
+					y2 = "0"
+				>
+					<stop 
+						offset = "0%" 
+						 style = "
+						 	  stop-color: rgb(255,255,0);
+						 	stop-opacity: 1;
+						 " 
+					/>
+					<stop 
+						offset = "100%" 
+						 style = "
+						 	  stop-color: rgb(255,0,0);
+						 	stop-opacity: 1;
+						 " 
+					/>
+				</linearGradient>
+			</defs>
+			<ellipse 
+				  cx = "200" 
+				  cy = "70" 
+				  rx = "85" 
+				  ry = "55" 
+				fill = "url(#grad3)" 
+			/>
+			<text 
+				   fill = "#ffffff" 
+			  font-size = "45" 
+			font-family = "Verdana" 
+					  x = "150" 
+					  y = "86"
+			>
+				SVG
+			</text>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+	 
+	</body>
+</html>
+
+
+
+
