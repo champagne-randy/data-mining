@@ -1,0 +1,23 @@
+/*
+*
+*	Style rules for SVG tutorials
+*
+*/
+
+
+
+
+// _sandbox experiments
+.graphic_container {
+		 display: block;
+	 margin-left: 0 0 0 20px;
+}
+.graphic_svg {
+		 display: inline-block;
+}
+.graphic_png{
+		 display: inline-block;
+		position: relative;
+			left: 10px;
+			 top: -45px
+}

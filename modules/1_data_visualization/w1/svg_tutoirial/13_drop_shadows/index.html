@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>drop shadows filter - SVG tutorial</title>
+	</head>
+	<body>
+
+		<h1>Example 1: drop shadows filter - &lt;feOffset&gt;</h1>
+		<p>
+			The &lt;feOffset&gt; element is used to create drop shadow effects. The idea is to take an SVG graphic (image or element) and move it a little bit in the xy plane.
+			<br><br>
+			The first example offsets a rectangle (with &lt;feOffset&gt;), then blend the original on top of the offset image (with &lt;feBlend&gt;):
+		</p>
+		<svg height = "150" 
+			  width = "150"
+		>
+			<defs>
+				<filter id = "f1" 
+						 x = "0" 
+						 y = "0" 
+					 width = "200%" 
+					height = "200%"
+				>
+					<feOffset result = "offOut" 
+								  in = "SourceGraphic" 
+								  dx = "20" 
+								  dy = "20" 
+					/>
+					<feBlend in = "SourceGraphic" 
+							in2 = "offOut" 
+						   mode = "normal" 
+					/>
+				</filter>
+			</defs>
+			<rect stroke-width = "3"
+						 width = "90" 
+						height = "90" 
+						stroke = "green" 
+						  fill = "yellow" 
+						filter = "url(#f1)" 
+			/>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 2: drop shadows filter - &lt;feOffset&gt;</h1>
+		<p>
+			Now, the offset image can be blurred (with &lt;feGaussianBlur&gt;):
+		</p>
+		<svg height = "150" 
+			  width = "150"
+		>
+			<defs>
+				<filter id = "f2" 
+						 x = "0" 
+						 y = "0" 
+					 width = "200%" 
+					height = "200%"
+				>
+					<feOffset result = "offOut" 
+								  in = "SourceGraphic" 
+								  dx = "20" 
+								  dy = "20" 
+					/>
+					<feGaussianBlur result = "blurOut" 
+										in = "offOut" 
+							  stdDeviation = "10" 
+					/>
+					<feBlend in = "SourceGraphic" 
+							in2 = "blurOut" 
+						   mode = "normal" 
+					/>
+				</filter>
+			</defs>
+			<rect stroke-width = "3"
+						 width = "90" 
+						height = "90" 
+						stroke = "green" 
+						  fill = "yellow" 
+						filter = "url(#f2)" 
+			/>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 3: drop shadows filter - &lt;feOffset&gt;</h1>
+		<p>
+			Now, make the shadow black:
+		</p>
+		<svg height = "150" 
+			  width = "150"
+		>
+			<defs>
+				<filter id = "f3" 
+						 x = "0" 
+						 y = "0" 
+					 width = "200%" 
+					height = "200%"
+				>
+					<feOffset result = "offOut" 
+								  in = "SourceAlpha" 
+								  dx = "20" 
+								  dy = "20" 
+					/>
+					<feGaussianBlur result = "blurOut" 
+										in = "offOut" 
+							  stdDeviation = "10" 
+					/>
+					<feBlend in = "SourceGraphic" 
+							in2 = "blurOut" 
+						   mode = "normal" 
+					/>
+				</filter>
+			</defs>
+			<rect stroke-width = "3"
+						 width = "90" 
+						height = "90" 
+						stroke = "green" 
+						  fill = "yellow" 
+						filter = "url(#f3)" 
+			/>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+
+		<br><br>
+
+		<h1>Example 4: drop shadows filter - &lt;feOffset&gt;</h1>
+		<p>
+			Now, treat the shadow as a color:
+		</p>
+		<svg height = "150" 
+			  width = "150"
+		>
+			<defs>
+				<filter id = "f4" 
+						 x = "0" 
+						 y = "0" 
+					 width = "200%" 
+					height = "200%"
+				>
+					<feOffset result = "offOut" 
+								  in = "SourceGraphic" 
+								  dx = "20" 
+								  dy = "20" 
+					/>
+					<feColorMatrix result = "matrixOut" 
+									   in = "offOut" 
+									 type = "matrix"
+								   values = "0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" 
+					/>
+					<feGaussianBlur result = "blurOut" 
+										in = "matrixOut" 
+							  stdDeviation = "10" 
+					/>
+					<feBlend in = "SourceGraphic" 
+							in2 = "blurOut" 
+						   mode = "normal" 
+					/>
+				</filter>
+			</defs>
+			<rect stroke-width = "3"
+						 width = "90" 
+						height = "90" 
+						stroke = "green" 
+						  fill = "yellow" 
+						filter = "url(#f4)" 
+			/>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+	 
+	</body>
+</html>
